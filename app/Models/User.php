@@ -46,8 +46,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function canBeImpersonatedBy($user)
+    public function canBeImpersonatedBy($user): bool
     {
-        return true;
+        return !$this->is($user);
     }
 }
